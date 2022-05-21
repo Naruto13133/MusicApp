@@ -17,6 +17,8 @@ import java.util.Scanner;
  */
 public class MusicApp {
 
+    
+    //creating Album Arraylist for storing  song
     public static ArrayList<Album> albums=new ArrayList<>();
     
     public static void main(String[] args){
@@ -49,7 +51,6 @@ public class MusicApp {
         albums.add(alb1);
         
         //creating LinkList of playList
-        
         LinkedList<Song> playlist_1=new LinkedList<>();
         
         
@@ -66,6 +67,8 @@ public class MusicApp {
         Scanner  sc=new Scanner(System.in);
         boolean quite=false;
         boolean  forward=true;
+        
+        //Useing listIterator for traversing through playlist
         ListIterator<Song> listIterator= playList.listIterator();
         
         if(playList.size()==0  ){
@@ -83,12 +86,13 @@ public class MusicApp {
             
             switch(action){
             
+                //Quit option code
                 case 0:
                     System.out.println("playlist complete");
                  quite = true;
                     break;
 
-                    
+                 //play next song   
                 case 1:
                     if(!forward)
                     {
@@ -105,7 +109,7 @@ public class MusicApp {
                     forward=false;
                     }
                     break;  
-            
+            //play previous song
                 case 2:
                 if(forward)
                 {
@@ -125,6 +129,7 @@ public class MusicApp {
                }
                break;
                
+               //replay current Song
                 case 3:
                     if(forward)
                     {
@@ -154,13 +159,17 @@ public class MusicApp {
                     }
                     break;
                     
+                    //list all Song
                 case 4:
                     printList(playList);
                     break;
                     
+                    //print All available Option
                 case 5:
                     printmenu();
                     break;
+                    
+                    //delete All current option
                 case 6:
                     if(playList.size()>0)
                     {
@@ -200,6 +209,8 @@ public class MusicApp {
         
     }
     
+    
+    //this Will print  all song in the list
     private static  void printList(LinkedList<Song> playlist){
     Iterator<Song> iterator=playlist.iterator();
         System.out.println("-------------------");

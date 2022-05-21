@@ -55,7 +55,7 @@ public class Album {
 
     public Album() {
     }
-    
+        //Adding song into playlist Taking title as an argument
        public boolean addToPlaylist(String title,LinkedList<Song> PlayList){
         for(Song checkSong:this.songs){
         if(checkSong.getName().equals(title)){
@@ -85,6 +85,7 @@ public class Album {
     return false;
     }
     
+    //this is use to find a song 
     public Song  findSong(String name){
         for(Song checkSong : this.songs){
             if(checkSong.getName().equals(name)==true)
@@ -94,7 +95,7 @@ public class Album {
     }
     
             
-        
+        //this Will add Song in Album
         public boolean addSong(String name,double duration)        {
          if(findSong(name)==null){
              songs.add(new Song(name,  duration));
@@ -104,10 +105,6 @@ public class Album {
          else{
              System.out.println("Song Alreadhy exist!");   
          return false;
-         
-         
-         
-         
          
          } 
         }
